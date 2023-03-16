@@ -63,7 +63,6 @@ public class UIManager : MonoBehaviour
     {
         WriteResult(StandaloneFileBrowser.OpenFilePanel("Open File", "", "", false));
         mainTexture = ImageLoader.LoadImage(_path.Replace(@"\", "/").Replace("\n", ""));
-        Debug.Log(mainTexture.width % mainTexture.height);
         if (mainTexture.width % mainTexture.height == 0)
         {
             widthMultiplier = 1;
@@ -84,6 +83,9 @@ public class UIManager : MonoBehaviour
         else
         {
             totalFrames = 1;
+            VisualizeAnimationFrame();
+            animationScrollingButtons.SetActive(false);
+
             if (mainTexture.width > mainTexture.height)
             {
                 widthMultiplier = 1;
@@ -180,7 +182,7 @@ public class UIManager : MonoBehaviour
             {
                 for (int x = i; x < Mathf.FloorToInt(size * (i + 1) * widthMultiplier); x++)
                 {
-                    Color pixelColor = mainTexture.GetPixel((int)((x + 0.5f) * xScale / totalFrames), (int)((y + 0.5f) * yScale));
+                    Color pixelColor = mainTexture.GetPixel((int)((x + 0.5f) * xScale / totalFrames / widthMultiplier), (int)((y + 0.5f) * yScale / heightMultiplier));
                     if (pixelColor.a > 0)
                     {
                         pixelColor.a = 1;

@@ -23,7 +23,6 @@ public class ImageLoader
     public static void SaveImage(Texture2D texture)
     {
         byte[] bytes = texture.EncodeToPNG();
-        //var dirPath = Application.persistentDataPath + "/../SaveImages/";
         var path = StandaloneFileBrowser.SaveFilePanel("Save File", "", "image", "png");
         File.WriteAllBytes(path, bytes);
     }
