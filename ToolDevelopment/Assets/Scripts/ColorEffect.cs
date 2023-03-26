@@ -145,9 +145,19 @@ public class ColorEffect : MonoBehaviour
         color1 = color;
     }
 
+    public Color GetColor1()
+    {
+        return color1;
+    }
+
     public void SetColor2(Color color)
     {
         color2 = color;
+    }
+
+    public Color GetColor2()
+    {
+        return color2;
     }
 
     public void SwapColors()

@@ -51,9 +51,6 @@ public class NewUIManager : MonoBehaviour
     public ColorPicker colorPicker1;
     public ColorPicker colorPicker2;
     //------------
-    Color color1;
-    Color color2;
-    //------------
     public GameObject swapColorButton;
 
     float widthMultiplier;
@@ -294,6 +291,8 @@ public class NewUIManager : MonoBehaviour
     public void SwapColors()
     {
         colorEffect.SwapColors();
+        colorPreview1.GetComponent<Image>().color = colorEffect.GetColor1();
+        colorPreview2.GetComponent<Image>().color = colorEffect.GetColor2();
     }
 
     public void ResetContrast()
