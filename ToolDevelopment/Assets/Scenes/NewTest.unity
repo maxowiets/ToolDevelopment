@@ -553,8 +553,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1467945553}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
         m_MethodName: ExportImageToPNG
         m_Mode: 1
         m_Arguments:
@@ -936,7 +936,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1467945553}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: PauseAnimation
         m_Mode: 1
@@ -1138,7 +1138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   texture: {fileID: 1225049324}
   actualColor: {fileID: 1164668291}
-  manager: {fileID: 1467945553}
+  manager: {fileID: 1467945558}
   refSprite: {fileID: 2800000, guid: 132bfbfcdfc410f47a25a72646212545, type: 3}
 --- !u!114 &88600606
 MonoBehaviour:
@@ -1355,9 +1355,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1467945553}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
         m_MethodName: ClearOutline
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
+        m_MethodName: UpdateOutline
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1624,9 +1636,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1467945553}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
         m_MethodName: OutlineInsideThick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
+        m_MethodName: UpdateOutline
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1908,9 +1932,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1467945553}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
         m_MethodName: OutlineInsideThin
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
+        m_MethodName: UpdateOutline
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2214,8 +2250,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1467945553}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
         m_MethodName: ResetBrightness
         m_Mode: 1
         m_Arguments:
@@ -3481,7 +3517,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1467945553}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: PreviousAnimationFrame
         m_Mode: 1
@@ -3750,8 +3786,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1467945553}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
         m_MethodName: ResetContrast
         m_Mode: 1
         m_Arguments:
@@ -4062,9 +4098,33 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1467945553}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
         m_MethodName: Downscale64x64
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
+        m_MethodName: UpdateColorMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
+        m_MethodName: UpdateOutline
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4408,9 +4468,33 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1467945553}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
         m_MethodName: Downscale16x16
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
+        m_MethodName: UpdateColorMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
+        m_MethodName: UpdateOutline
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4543,9 +4627,33 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1467945553}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
         m_MethodName: NormalColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
+        m_MethodName: UpdateColorMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
+        m_MethodName: UpdateOutline
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4685,9 +4793,21 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1467945553}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
         m_MethodName: UpdateColorMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
+        m_MethodName: UpdateOutline
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4933,9 +5053,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1467945553}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
         m_MethodName: IncreaseThickness
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
+        m_MethodName: UpdateOutline
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5202,8 +5334,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1467945553}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
         m_MethodName: ResetSaturation
         m_Mode: 1
         m_Arguments:
@@ -5651,9 +5783,21 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1467945553}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
         m_MethodName: UpdateColorMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
+        m_MethodName: UpdateOutline
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6325,8 +6469,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1467945553}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
         m_MethodName: LoadImage
         m_Mode: 1
         m_Arguments:
@@ -6594,9 +6738,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1467945553}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
         m_MethodName: OutlineOutsideThick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
+        m_MethodName: UpdateOutline
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7145,9 +7301,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1467945553}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
         m_MethodName: OutlineOutsideThin
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
+        m_MethodName: UpdateOutline
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7478,8 +7646,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1467945553}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
         m_MethodName: ResetGamma
         m_Mode: 1
         m_Arguments:
@@ -7934,9 +8102,33 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1467945553}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
         m_MethodName: SwapColors
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
+        m_MethodName: UpdateColorMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
+        m_MethodName: UpdateOutline
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8203,9 +8395,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1467945553}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
         m_MethodName: DecreaseThickness
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
+        m_MethodName: UpdateOutline
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8473,9 +8677,33 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1467945553}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
         m_MethodName: Downscale8x8
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
+        m_MethodName: UpdateColorMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
+        m_MethodName: UpdateOutline
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9031,8 +9259,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1467945553}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
         m_MethodName: ToggleOriginalImage
         m_Mode: 1
         m_Arguments:
@@ -9210,7 +9438,7 @@ GameObject:
   - component: {fileID: 1467945556}
   - component: {fileID: 1467945555}
   - component: {fileID: 1467945554}
-  - component: {fileID: 1467945553}
+  - component: {fileID: 1467945558}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -9218,51 +9446,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1467945553
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1467945552}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56f5862bce25efc4bb8f3e45bf51cd51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  image: {fileID: 2027137883}
-  thicknessUI: {fileID: 56033273}
-  importText: {fileID: 478671025}
-  checkmarksPixelate:
-  - {fileID: 1165968687}
-  - {fileID: 80772548}
-  - {fileID: 1639356342}
-  - {fileID: 864476881}
-  - {fileID: 766528870}
-  checkmarksColor:
-  - {fileID: 1712283242}
-  - {fileID: 1721090762}
-  - {fileID: 1999325406}
-  checkmarksOutline:
-  - {fileID: 26362970}
-  - {fileID: 341633267}
-  - {fileID: 517583353}
-  - {fileID: 431598078}
-  - {fileID: 2091755899}
-  checkmarkOriginal: {fileID: 1900218588}
-  animationScrollingButtons: {fileID: 1461724399}
-  animationFrameCounter: {fileID: 743233412}
-  playButton: {fileID: 2075376401}
-  pauseButton: {fileID: 77428618}
-  contrastSlider: {fileID: 983092220}
-  gammaSlider: {fileID: 1663356659}
-  brightnessSlider: {fileID: 856932147}
-  saturationSlider: {fileID: 2002239722}
-  colorPreview1: {fileID: 1164668289}
-  colorPreview2: {fileID: 1404865950}
-  colorPicker1: {fileID: 88600605}
-  colorPicker2: {fileID: 2077769328}
-  swapColorButton: {fileID: 1225231279}
 --- !u!114 &1467945554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9356,6 +9539,51 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1467945558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467945552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c35488492e0634444b6d6a9e3e72ce56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 2027137883}
+  thicknessUI: {fileID: 56033273}
+  importText: {fileID: 478671025}
+  checkmarksPixelate:
+  - {fileID: 1165968687}
+  - {fileID: 80772548}
+  - {fileID: 1639356342}
+  - {fileID: 864476881}
+  - {fileID: 766528870}
+  checkmarksColor:
+  - {fileID: 1712283242}
+  - {fileID: 1721090762}
+  - {fileID: 1999325406}
+  checkmarksOutline:
+  - {fileID: 26362970}
+  - {fileID: 341633267}
+  - {fileID: 517583353}
+  - {fileID: 431598078}
+  - {fileID: 2091755899}
+  checkmarkOriginal: {fileID: 1900218588}
+  animationScrollingButtons: {fileID: 1461724399}
+  animationFrameCounter: {fileID: 743233412}
+  playButton: {fileID: 2075376401}
+  pauseButton: {fileID: 77428618}
+  contrastSlider: {fileID: 983092220}
+  gammaSlider: {fileID: 1663356659}
+  brightnessSlider: {fileID: 856932147}
+  saturationSlider: {fileID: 2002239722}
+  colorPreview1: {fileID: 1164668289}
+  colorPreview2: {fileID: 1404865950}
+  colorPicker1: {fileID: 88600605}
+  colorPicker2: {fileID: 2077769328}
+  swapColorButton: {fileID: 1225231279}
 --- !u!1 &1492705476
 GameObject:
   m_ObjectHideFlags: 0
@@ -9613,9 +9841,33 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1467945553}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
         m_MethodName: Downscale128x128
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
+        m_MethodName: UpdateColorMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
+        m_MethodName: UpdateOutline
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9825,9 +10077,33 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1467945553}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
         m_MethodName: GradientColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
+        m_MethodName: UpdateColorMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
+        m_MethodName: UpdateOutline
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10448,9 +10724,21 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1467945553}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
         m_MethodName: UpdateColorMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
+        m_MethodName: UpdateOutline
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11298,7 +11586,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1467945553}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: NextAnimationFrame
         m_Mode: 1
@@ -11516,9 +11804,21 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1467945553}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
         m_MethodName: UpdateColorMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
+        m_MethodName: UpdateOutline
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11896,7 +12196,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1467945553}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: PlayAnimation
         m_Mode: 1
@@ -12001,7 +12301,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   texture: {fileID: 575814866}
   actualColor: {fileID: 1404865952}
-  manager: {fileID: 1467945553}
+  manager: {fileID: 1467945558}
   refSprite: {fileID: 2800000, guid: 132bfbfcdfc410f47a25a72646212545, type: 3}
 --- !u!114 &2077769329
 MonoBehaviour:
@@ -12692,9 +12992,33 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1467945553}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
         m_MethodName: Downscale32x32
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
+        m_MethodName: UpdateColorMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
+        m_MethodName: UpdateOutline
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12828,9 +13152,33 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1467945553}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
         m_MethodName: SingleColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
+        m_MethodName: UpdateColorMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
+        m_MethodName: UpdateOutline
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -1,6 +1,7 @@
 using SFB;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -17,6 +18,7 @@ public class UIManager : MonoBehaviour
 
     int outlineThickness;
     public TextMeshProUGUI thicknessUI;
+    public GameObject importText;
 
     PixelateMode pixelateMode;
     ColorMode colorMode;
@@ -34,13 +36,18 @@ public class UIManager : MonoBehaviour
     public GameObject playButton;
     public GameObject pauseButton;
 
-    public Slider hueSlider;
+    public Slider contrastSlider;
+    public Slider gammaSlider;
+    public Slider brightnessSlider;
     public Slider saturationSlider;
-    public Slider valueSlider;
 
-    public Slider hueSliderGradient;
-    public Slider saturationSliderGradient;
-    public Slider valueSliderGradient;
+    public GameObject colorPreview1;
+    public GameObject colorPreview2;
+    public ColorPicker colorPicker1;
+    public ColorPicker colorPicker2;
+
+    Color color1;
+    Color color2;
 
     public GameObject swapColorButton;
 
@@ -57,12 +64,16 @@ public class UIManager : MonoBehaviour
         UpdateThicknessUINumber();
         NormalColor();
         Downscale128x128();
+        colorPicker1.Initialize();
+        colorPicker2.Initialize();
     }
 
     public void LoadImage()
     {
         WriteResult(StandaloneFileBrowser.OpenFilePanel("Open File", "", "", false));
         mainTexture = ImageLoader.LoadImage(_path.Replace(@"\", "/").Replace("\n", ""));
+        importText.SetActive(false);
+        image.color = Color.white;
         if (mainTexture.width % mainTexture.height == 0)
         {
             widthMultiplier = 1;
@@ -206,7 +217,6 @@ public class UIManager : MonoBehaviour
         pixelateMode = PixelateMode.X128;
         CheckmarkUIElements(0, checkmarksPixelate);
         if (image.texture != null) DownscaleImage(128);
-
     }
 
     public void Downscale64x64()
@@ -237,45 +247,115 @@ public class UIManager : MonoBehaviour
         if (image.texture != null) DownscaleImage(8);
     }
 
+    public void SetColor1(Color newColor)
+    {
+        color1 = newColor;
+        UpdateColorMode();
+    }
+
+    public void SetColor2(Color newColor)
+    {
+        color2 = newColor;
+        UpdateColorMode();
+    }
+
+    public void ResetContrast()
+    {
+        contrastSlider.value = 0.5f;
+    }
+
+    public void ResetGamma()
+    {
+        gammaSlider.value = 1f;
+    }
+
+    public void ResetBrightness()
+    {
+        brightnessSlider.value = 0f;
+    }
+
+    public void ResetSaturation()
+    {
+        saturationSlider.value = 0f;
+    }
+
+    Color ColorAdjustments(Color c)
+    {
+        // apply the brightness adjustment
+        Color adjustedColor = c + new Color(brightnessSlider.value, brightnessSlider.value, brightnessSlider.value);
+        
+        // apply the saturation adjustment
+        float h, s, v;
+        Color.RGBToHSV(adjustedColor, out h, out s, out v);
+        adjustedColor = Color.HSVToRGB(h, s + saturationSlider.value, v + saturationSlider.value);
+
+        // apply the gamma adjustment
+        adjustedColor.r = Mathf.Pow(adjustedColor.r, 1f / gammaSlider.value);
+        adjustedColor.g = Mathf.Pow(adjustedColor.g, 1f / gammaSlider.value);
+        adjustedColor.b = Mathf.Pow(adjustedColor.b, 1f / gammaSlider.value);
+
+        // apply the contrast adjustment
+        if (contrastSlider.value <= 0.5f)
+        {
+            adjustedColor.r = ((adjustedColor.r - 0.5f) * contrastSlider.value * 2) + 0.5f;
+            adjustedColor.g = ((adjustedColor.g - 0.5f) * contrastSlider.value * 2) + 0.5f;
+            adjustedColor.b = ((adjustedColor.b - 0.5f) * contrastSlider.value * 2) + 0.5f;
+        }
+        else
+        {
+            if (adjustedColor.grayscale >= 0.5f)
+            {
+                adjustedColor = Color.Lerp(adjustedColor, Color.white, (contrastSlider.value - 0.5f) * 2);
+            }
+            else
+            {
+                adjustedColor = Color.Lerp(adjustedColor, Color.black, (contrastSlider.value - 0.5f) * 2);
+            }
+        }
+
+        return adjustedColor;
+    }
+
     public void NormalColor()
     {
         colorMode = ColorMode.NORMAL;
         CheckmarkUIElements(0, checkmarksColor);
 
-        hueSlider.gameObject.SetActive(false);
-        saturationSlider.gameObject.SetActive(false);
-        valueSlider.gameObject.SetActive(false);
-
-        hueSliderGradient.gameObject.SetActive(false);
-        saturationSliderGradient.gameObject.SetActive(false);
-        valueSliderGradient.gameObject.SetActive(false);
-
         swapColorButton.SetActive(false);
+        colorPreview1.SetActive(false);
+        colorPreview2.SetActive(false);
 
         if (image.texture != null)
         {
-            colorLayer = pixelateLayer;
+            Texture2D newTexture = new Texture2D(pixelateLayer.width, pixelateLayer.height);
+            Color[] pixels = pixelateLayer.GetPixels();
+            for (int i = 0; i < pixels.Length; i++)
+            {
+                if (pixels[i].a == 0)
+                {
+                    continue;
+                }
+                pixels[i] = ColorAdjustments(pixels[i]);
+            }
+            newTexture.SetPixels(pixels);
+            newTexture.Apply();
+            newTexture.filterMode = FilterMode.Point;
+            colorLayer = newTexture;
             image.texture = colorLayer;
         }
         UpdateOutline();
     }
 
-    public void HSVColor()
+    public void SingleColor()
     {
-        colorMode = ColorMode.HSV;
+        colorMode = ColorMode.SINGLE;
         CheckmarkUIElements(1, checkmarksColor);
         
-        hueSlider.gameObject.SetActive(true);
-        saturationSlider.gameObject.SetActive(true);
-        valueSlider.gameObject.SetActive(true);
-
-        hueSliderGradient.gameObject.SetActive(false);
-        saturationSliderGradient.gameObject.SetActive(false);
-        valueSliderGradient.gameObject.SetActive(false);
-
         swapColorButton.SetActive(false);
+        colorPreview1.SetActive(true);
+        colorPreview2.SetActive(false);
 
-        ChangeColorFromHSV();
+        ChangeColorSingle();
     }
 
     public void GradientColor()
@@ -283,64 +363,45 @@ public class UIManager : MonoBehaviour
         colorMode = ColorMode.GRADIENT;
         CheckmarkUIElements(2, checkmarksColor);
 
-        hueSlider.gameObject.SetActive(true);
-        saturationSlider.gameObject.SetActive(true);
-        valueSlider.gameObject.SetActive(true);
-
-        hueSliderGradient.gameObject.SetActive(true);
-        saturationSliderGradient.gameObject.SetActive(true);
-        valueSliderGradient.gameObject.SetActive(true);
-
         swapColorButton.SetActive(true);
+        colorPreview1.SetActive(true);
+        colorPreview2.SetActive(true);
 
-        ChangeGradientFromHSV();
+        ChangeColorGradient();
     }
 
     public void SwapColors()
     {
-        float h = hueSlider.value;
-        float s = saturationSlider.value;
-        float v = valueSlider.value;
+        Color previousColor = color1;
+        color1 = color2;
+        color2 = previousColor;
+        colorPreview1.GetComponent<Image>().color = color1;
+        colorPreview2.GetComponent<Image>().color = color2;
 
-        hueSlider.value = hueSliderGradient.value;
-        saturationSlider.value = saturationSliderGradient.value;
-        valueSlider.value = valueSliderGradient.value;
-
-        hueSliderGradient.value = h;
-        saturationSliderGradient.value = s;
-        valueSliderGradient.value = v;
-
-        ChangeGradientFromHSV();
+        ChangeColorGradient();
     }
 
-    void UpdateColorMode()
+    public void UpdateColorMode()
     {
         switch (colorMode)
         {
             case ColorMode.NORMAL:
                 NormalColor();
                 break;
-            case ColorMode.HSV:
-                ChangeColorFromHSV();
+            case ColorMode.SINGLE:
+                ChangeColorSingle();
                 break;
             case ColorMode.GRADIENT:
-                ChangeGradientFromHSV();
+                ChangeColorGradient();
                 break;
         }
     }
 
-    public void ChangeColorFromHSV()
+    public void ChangeColorSingle()
     {
-        if (colorMode == ColorMode.GRADIENT)
-        {
-            ChangeGradientFromHSV();
-            return;
-        }
         if (image.texture != null)
         {
             Texture2D newTexture = new Texture2D(pixelateLayer.width, pixelateLayer.height);
-            Color color = Color.HSVToRGB(hueSlider.value, saturationSlider.value, valueSlider.value);
-
             for (int y = 0; y < pixelateLayer.height; y++)
             {
                 for (int x = 0; x < pixelateLayer.width; x++)
@@ -352,7 +413,9 @@ public class UIManager : MonoBehaviour
                     else
                     {
                         float grayscaleAmount = pixelateLayer.GetPixel(x, y).grayscale;
-                        newTexture.SetPixel(x, y, new Color(color.r * grayscaleAmount, color.g * grayscaleAmount, color.b * grayscaleAmount, 1f), 0);
+                        Color newColor = new Color(color1.r * grayscaleAmount, color1.g * grayscaleAmount, color1.b * grayscaleAmount, 1f);
+                        newColor = ColorAdjustments(newColor);
+                        newTexture.SetPixel(x, y, newColor, 0);
                     }
                 }
             }
@@ -364,9 +427,8 @@ public class UIManager : MonoBehaviour
         UpdateOutline();
     }
 
-    public void ChangeGradientFromHSV()
+    public void ChangeColorGradient()
     {
-        colorMode = ColorMode.GRADIENT;
         CheckmarkUIElements(2, checkmarksColor);
 
         if (image.texture != null)
@@ -375,10 +437,10 @@ public class UIManager : MonoBehaviour
             var gradient = new Gradient();
             var colorKey = new GradientColorKey[2];
 
-            colorKey[0].color = Color.HSVToRGB(hueSlider.value, saturationSlider.value, valueSlider.value);
+            colorKey[0].color = color1;
             colorKey[0].time = 1.0f;
 
-            colorKey[1].color = Color.HSVToRGB(hueSliderGradient.value, saturationSliderGradient.value, valueSliderGradient.value);
+            colorKey[1].color = color2;
             colorKey[1].time = 0.3f;
 
             gradient.colorKeys = colorKey;
@@ -396,7 +458,9 @@ public class UIManager : MonoBehaviour
                     {
                         float grayscaleAmount = pixelateLayer.GetPixel(x, y).grayscale;
                         color = gradient.Evaluate(grayscaleAmount);
-                        newTexture.SetPixel(x, y, new Color(color.r * grayscaleAmount, color.g * grayscaleAmount, color.b * grayscaleAmount, 1f), 0);
+                        Color newColor = new Color(color.r * grayscaleAmount, color.g * grayscaleAmount, color.b * grayscaleAmount, 1f);
+                        newColor = ColorAdjustments(newColor);
+                        newTexture.SetPixel(x, y, newColor, 0);
                     }
                 }
             }
@@ -438,8 +502,6 @@ public class UIManager : MonoBehaviour
 
         Texture2D currentTexture = colorLayer;
         Texture2D newTexture = new Texture2D(currentTexture.width, currentTexture.height, TextureFormat.RGBA32, false);
-
-        Debug.Log(newTexture.width + "   " + newTexture.height);
 
         for (int x = 0; x < currentTexture.width; x++)
         {
@@ -513,8 +575,6 @@ public class UIManager : MonoBehaviour
 
         Texture2D currentTexture = colorLayer;
         Texture2D newTexture = new Texture2D(currentTexture.width, currentTexture.height, TextureFormat.RGBA32, false);
-
-        Debug.Log(newTexture.width + "   " + newTexture.height);
 
         for (int x = 0; x < currentTexture.width; x++)
         {
@@ -700,6 +760,6 @@ public enum OutlineMode
 public enum ColorMode
 {
     NORMAL = 0,
-    HSV,
+    SINGLE,
     GRADIENT,
 }
