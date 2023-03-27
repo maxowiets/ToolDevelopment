@@ -168,9 +168,9 @@ public class ColorEffect : MonoBehaviour
     }
 }
 
-//public enum ColorMode
-//{
-//    NORMAL = 0,
-//    SINGLE,
-//    GRADIENT,
-//}
+public enum ColorMode
+{
+    NORMAL = 0,
+    SINGLE,
+    GRADIENT,
+}

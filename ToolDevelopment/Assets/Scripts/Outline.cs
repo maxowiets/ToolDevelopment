@@ -162,11 +162,11 @@ public class Outline : MonoBehaviour
     }
 }
 
-//public enum OutlineMode
-//{
-//    NONE = 0,
-//    OUTSIDE_THIN,
-//    INSIDE_THIN,
-//    OUTSIDE_THICK,
-//    INSIDE_THICK,
-//}
+public enum OutlineMode
+{
+    NONE = 0,
+    OUTSIDE_THIN,
+    INSIDE_THIN,
+    OUTSIDE_THICK,
+    INSIDE_THICK,
+}

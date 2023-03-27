@@ -45,11 +45,11 @@ public class Downscaler : MonoBehaviour
     }
 }
 
-//public enum PixelateMode
-//{
-//    X128 = 0,
-//    X64,
-//    X32,
-//    X16,
-//    X8,
-//}
+public enum DownscaleMode
+{
+    X128 = 0,
+    X64,
+    X32,
+    X16,
+    X8,
+}
