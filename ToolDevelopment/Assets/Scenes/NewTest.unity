@@ -936,8 +936,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
         m_MethodName: PauseAnimation
         m_Mode: 1
         m_Arguments:
@@ -3593,8 +3593,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
         m_MethodName: PreviousAnimationFrame
         m_Mode: 1
         m_Arguments:
@@ -11663,8 +11663,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
         m_MethodName: NextAnimationFrame
         m_Mode: 1
         m_Arguments:
@@ -12273,8 +12273,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 1467945558}
+        m_TargetAssemblyTypeName: NewUIManager, Assembly-CSharp
         m_MethodName: PlayAnimation
         m_Mode: 1
         m_Arguments:
