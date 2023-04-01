@@ -20,7 +20,7 @@ public class NewUIManager : MonoBehaviour
     public GameObject importText;
 
     //Effects
-    DownscaleMode pixelateMode;
+    DownscaleMode downscaleMode;
     Downscaler downscaler;
     ColorMode colorMode;
     ColorEffect colorEffect;
@@ -176,7 +176,7 @@ public class NewUIManager : MonoBehaviour
 
     void UpdateScaleImage()
     {
-        switch (pixelateMode)
+        switch (downscaleMode)
         {
             case DownscaleMode.X128:
                 Downscale128x128();
@@ -200,7 +200,7 @@ public class NewUIManager : MonoBehaviour
 
     public void Downscale128x128()
     {
-        pixelateMode = DownscaleMode.X128;
+        downscaleMode = DownscaleMode.X128;
         CheckmarkUIElements(0, checkmarksPixelate);
         if (image.texture == null) return;
         pixelateLayer = downscaler.DownscaleImage(mainTexture, 128, widthMultiplier, heightMultiplier, totalFrames);
@@ -209,7 +209,7 @@ public class NewUIManager : MonoBehaviour
 
     public void Downscale64x64()
     {
-        pixelateMode = DownscaleMode.X64;
+        downscaleMode = DownscaleMode.X64;
         CheckmarkUIElements(1, checkmarksPixelate);
         if (image.texture == null) return;
         pixelateLayer = downscaler.DownscaleImage(mainTexture, 64, widthMultiplier, heightMultiplier, totalFrames);
@@ -218,7 +218,7 @@ public class NewUIManager : MonoBehaviour
 
     public void Downscale32x32()
     {
-        pixelateMode = DownscaleMode.X32;
+        downscaleMode = DownscaleMode.X32;
         CheckmarkUIElements(2, checkmarksPixelate);
         if (image.texture == null) return;
         pixelateLayer = downscaler.DownscaleImage(mainTexture, 32, widthMultiplier, heightMultiplier, totalFrames);
@@ -227,7 +227,7 @@ public class NewUIManager : MonoBehaviour
 
     public void Downscale16x16()
     {
-        pixelateMode = DownscaleMode.X16;
+        downscaleMode = DownscaleMode.X16;
         CheckmarkUIElements(3, checkmarksPixelate);
         if (image.texture == null) return;
         pixelateLayer = downscaler.DownscaleImage(mainTexture, 16, widthMultiplier, heightMultiplier, totalFrames);
@@ -236,7 +236,7 @@ public class NewUIManager : MonoBehaviour
 
     public void Downscale8x8()
     {
-        pixelateMode = DownscaleMode.X8;
+        downscaleMode = DownscaleMode.X8;
         CheckmarkUIElements(4, checkmarksPixelate);
         if (image.texture == null) return;
         pixelateLayer = downscaler.DownscaleImage(mainTexture, 8, widthMultiplier, heightMultiplier, totalFrames);
